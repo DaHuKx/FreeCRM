@@ -1,0 +1,29 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "auth-grpc-route": {
+        "ClusterId": "auth-grpc-cluster",
+        "Match": {
+          "Path": "/AuthApi.Auth/Login"
+        }
+      }
+    },
+    "Clusters": {
+      "auth-grpc-cluster": {
+        "Destinations": {
+          "auth-grpc-cluster/destination": {
+            "Address": "https://localhost:7001/"
+          }
+        },
+        "HttpClient": {
+          "SslProtocols": "Tls12, Tls13",
+          "ValidateCertificates": false
+        },
+        "HttpRequest": {
+          "Version": "2.0",
+          "VersionPolicy": "RequestVersionExact"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FreeCRM.Client": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
