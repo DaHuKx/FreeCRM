@@ -1,10 +1,16 @@
 {
   "ReverseProxy": {
     "Routes": {
-      "auth-grpc-route": {
+      "auth-grpc-login-route": {
         "ClusterId": "auth-grpc-cluster",
         "Match": {
           "Path": "/AuthApi.Auth/Login"
+        }
+      },
+      "auth-grpc-register-route": {
+        "ClusterId": "auth-grpc-cluster",
+        "Match": {
+          "Path": "/AuthApi.Auth/Register"
         }
       }
     },
